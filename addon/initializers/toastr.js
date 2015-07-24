@@ -1,29 +1,9 @@
-export function initialize(container, application) {
-  toastr.options = {
-    closeButton: true,
-    debug: false,
-    newestOnTop: true,
-    progressBar: true,
-    positionClass: 'toast-top-right',
-    preventDuplicates: true,
-    onclick: null,
-    showDuration: '300',
-    hideDuration: '1000',
-    timeOut: '4000',
-    extendedTimeOut: '1000',
-    showEasing: 'swing',
-    hideEasing: 'linear',
-    showMethod: 'fadeIn',
-    hideMethod: 'fadeOut'
-  };
+export function initialize(container, application, options) {
+  var injectAs = options.injectAs;
+  toastr.options = options.toastrOptions;
 
   application.register('notify:main', toastr, { instantiate: false, singleton: true });
-  application.inject('route', 'notify', 'notify:main');
-  application.inject('controller', 'notify', 'notify:main');
-  application.inject('component', 'notify', 'notify:main');
+  application.inject('route', injectAs, 'notify:main');
+  application.inject('controller', injectAs, 'notify:main');
+  application.inject('component', injectAs, 'notify:main');
 }
-
-export default {
-  name: 'ember-toastr',
-  initialize: initialize
-};
