@@ -16,6 +16,35 @@ this.notify.info('Hello there!');
 
 See the toastr.js [demo] for other possible uses.
 
+## Configuration
+
+These are the default options:
+
+```js
+ENV['ember-toastr'] = {
+  injectAs: 'notify',
+  toastrOptions: {
+    closeButton: true,
+    debug: false,
+    newestOnTop: true,
+    progressBar: true,
+    positionClass: 'toast-top-right',
+    preventDuplicates: true,
+    onclick: null,
+    showDuration: '300',
+    hideDuration: '1000',
+    timeOut: '4000',
+    extendedTimeOut: '1000',
+    showEasing: 'swing',
+    hideEasing: 'linear',
+    showMethod: 'fadeIn',
+    hideMethod: 'fadeOut'
+  }
+};
+```
+
+All options in `toastrOptions` are direct options for toastr.js.
+
 ## Installation
 
 * `git clone` this repository
