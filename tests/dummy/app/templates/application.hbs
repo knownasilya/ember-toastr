@@ -1,3 +1,6 @@
 <h2 id="title">Welcome to Ember.js</h2>
-<a onclick={{action 'notify'}}>Notify</a>
+<a onclick={{action 'success' 'Saved!'}}>Success</a><br>
+<a onclick={{action 'info' 'New notification!'}}>Info</a><br>
+<a onclick={{action 'warning' 'Do not do this!'}}>Warning</a><br>
+<a onclick={{action 'error' 'Oh oh!'}}>Error</a><br>
 {{outlet}}
