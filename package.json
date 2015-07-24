@@ -1,7 +1,7 @@
 {
   "name": "ember-toastr",
   "version": "0.2.1",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Ember wrapper for Toastr.js notifications",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -11,11 +11,11 @@
     "build": "ember build",
     "test": "ember try:testall"
   },
-  "repository": "",
+  "repository": "git@github.com:knownasilya/ember-toastr.git",
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "Ilya Radchenko",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.0.2",
@@ -36,7 +36,10 @@
     "ember-try": "0.0.6"
   },
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "notifications",
+    "wrapper",
+    "toastr"
   ],
   "dependencies": {
     "ember-cli-babel": "^5.0.0"
