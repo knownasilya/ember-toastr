@@ -1,5 +1,6 @@
 {
   "predef": [
+    "toastr",
     "document",
     "window",
     "-Promise"
