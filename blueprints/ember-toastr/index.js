@@ -1,6 +1,10 @@
 module.exports = {
   description: 'Install toastr.js from bower',
 
+  // prevent complaining
+  normalizeEntityName: function() {
+  },
+
   // locals: function(options) {
   //   // Return custom template variables here.
   //   return {
