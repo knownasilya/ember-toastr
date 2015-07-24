@@ -1,5 +1,5 @@
 module.exports = {
-  description: 'Install toastr.js from bower'
+  description: 'Install toastr.js from bower',
 
   // locals: function(options) {
   //   // Return custom template variables here.
