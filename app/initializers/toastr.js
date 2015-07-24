@@ -26,6 +26,14 @@ const config = ENV['ember-toastr'] || {
 export default {
   name: 'ember-toastr',
   initialize(container, application) {
+    if (!config.toastrOptions) {
+      config.toastrOptions = toastrOptions;
+    }
+
+    if (!config.injectAs) {
+      config.injectAs = 'notify';
+    }
+
     initialize(container, application, config);
   }
 };
