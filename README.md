@@ -2,6 +2,8 @@
 
 A wrapper for [toastr.js] by injecting it into routes, components, and controllers.
 
+[![Ember Observer Score](http://emberobserver.com/badges/ember-toastr.svg)](http://emberobserver.com/addons/ember-toastr)
+
 ## Usage
 
 ```sh
