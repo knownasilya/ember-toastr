@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import { initialize } from '../../../initializers/toastr';
+import { initialize } from 'ember-toastr/initializers/toastr';
 import { module, test } from 'qunit';
 
 var registry, application;
@@ -16,8 +16,11 @@ module('Unit | Initializer | toastr', {
 
 // Replace this with your real tests.
 test('it works', function(assert) {
-  initialize(registry, application);
+  initialize(registry, application, {
+    injectAs: 'test'
+  });
 
   // you would normally confirm the results of the initializer here
-  assert.ok(true);
+  var toastr = registry.lookup('notify:main');
+  assert.ok(typeof toastr.info === 'function');
 });
