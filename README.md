@@ -2,6 +2,7 @@
 
 A wrapper for [toastr.js] by injecting it into routes, components, and controllers.
 
+[![Build Status](https://travis-ci.org/knownasilya/ember-toastr.svg)](https://travis-ci.org/knownasilya/ember-toastr)
 [![Ember Observer Score](http://emberobserver.com/badges/ember-toastr.svg)](http://emberobserver.com/addons/ember-toastr)
 
 ## Usage
