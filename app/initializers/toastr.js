@@ -19,7 +19,7 @@ const toastrOptions = {
   hideMethod: 'fadeOut'
 };
 const config = ENV['ember-toastr'] || {
-  injectAs: 'notify',
+  injectAs: 'toast',
   toastrOptions: toastrOptions
 };
 
@@ -31,7 +31,7 @@ export default {
     }
 
     if (!config.injectAs) {
-      config.injectAs = 'notify';
+      config.injectAs = 'toast';
     }
 
     initialize(container, application, config);

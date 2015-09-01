@@ -12,10 +12,10 @@ A wrapper for [toastr.js] by injecting it into routes, components, and controlle
 ember install ember-toastr
 ```
 
-The toastr object is injected as `notify`, so it can be used as
+The toastr object is injected as `toast`, so it can be used as
 
 ```js
-this.notify.info('Hello there!');
+this.toast.info('Hello there!');
 ```
 
 See the toastr.js [demo] for other possible uses.
@@ -26,7 +26,7 @@ These are the default options:
 
 ```js
 ENV['ember-toastr'] = {
-  injectAs: 'notify',
+  injectAs: 'toast',
   toastrOptions: {
     closeButton: true,
     debug: false,
