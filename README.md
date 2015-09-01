@@ -2,7 +2,7 @@
 
 A wrapper for [toastr.js] by injecting it into routes, components, and controllers.
 
-[![NPM](https://nodei.co/npm/ember-toastr.png?downloads=true&stars=true)](https://nodei.co/npm/ember-toastr/)  
+[![npm version](https://badge.fury.io/js/ember-toastr.svg)](http://badge.fury.io/js/ember-toastr)
 [![Build Status](https://travis-ci.org/knownasilya/ember-toastr.svg)](https://travis-ci.org/knownasilya/ember-toastr)
 [![Ember Observer Score](http://emberobserver.com/badges/ember-toastr.svg)](http://emberobserver.com/addons/ember-toastr)
 
