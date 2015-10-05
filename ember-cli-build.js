@@ -13,9 +13,5 @@ module.exports = function(defaults) {
     behave. You most likely want to be modifying `./index.js` or app's build file
   */
 
-  if (process.env.EMBER_ENV === 'test') {
-    app.import('vendor/phantom-js-polyfills.js');
-  }
-
   return app.toTree();
 };
