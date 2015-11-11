@@ -1,6 +1,6 @@
 {
   "name": "ember-toastr",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Ember wrapper for Toastr.js notifications",
   "directories": {
     "doc": "doc",
