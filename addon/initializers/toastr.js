@@ -6,8 +6,11 @@ var proxyGenerator = function(name){
   };
 };
 
-export function initialize(container, application, options) {
+export function initialize() {
+  // support 1.x and 2.x
+  var application = arguments[1] || arguments[0];
   var injectAs = options.injectAs;
+
   window.toastr.options = options.toastrOptions;
 
   var proxiedToastr = Ember.Object.extend(toastr).create({
