@@ -6,9 +6,7 @@ var proxyGenerator = function(name){
   };
 };
 
-export function initialize() {
-  // support 1.x and 2.x
-  var application = arguments[1] || arguments[0];
+export function initialize(application, options) {
   var injectAs = options.injectAs;
 
   window.toastr.options = options.toastrOptions;

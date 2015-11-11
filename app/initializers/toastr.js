@@ -25,7 +25,10 @@ const config = ENV['ember-toastr'] || {
 
 export default {
   name: 'ember-toastr',
-  initialize(container, application) {
+  initialize() {
+    // support 1.x and 2.x
+    var application = arguments[1] || arguments[0];
+
     if (!config.toastrOptions) {
       config.toastrOptions = toastrOptions;
     }
@@ -34,6 +37,7 @@ export default {
       config.injectAs = 'toast';
     }
 
-    initialize(container, application, config);
+    console.log(application);
+    initialize(application, config);
   }
 };

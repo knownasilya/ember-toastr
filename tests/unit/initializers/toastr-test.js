@@ -8,7 +8,7 @@ module('Unit | Initializer | toastr', {
   beforeEach: function() {
     Ember.run(function() {
       application = Ember.Application.create();
-      registry = application.registry;
+      registry = application.container && application.container.lookup ? application.container : application;
       application.deferReadiness();
     });
   }
@@ -16,7 +16,7 @@ module('Unit | Initializer | toastr', {
 
 // Replace this with your real tests.
 test('it works', function(assert) {
-  initialize(registry, application, {
+  initialize(application, {
     injectAs: 'test'
   });
 
