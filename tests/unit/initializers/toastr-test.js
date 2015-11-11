@@ -1,19 +1,21 @@
 import Ember from 'ember';
-import hasEmberVersion from 'ember-test-helpers/has-ember-version';
 import { initialize } from 'ember-toastr/initializers/toastr';
 import { module, test } from 'qunit';
 
 var registry, application;
+var numbers = Ember.VERSION.split('-')[0].split('.');
+var major = Number(numbers[0]);
+var minor = Number(numbers[1]);
 
 module('Unit | Initializer | toastr', {
   beforeEach: function() {
     Ember.run(function() {
       application = Ember.Application.create();
 
-      if (hasEmberVersion(1) || hasEmberVersion(2, 0)) {
+      if (major === 1 || (major === 2 && minor < 1)) {
         registry = application.registry;
       } else {
-        registry = application.container;
+        registry = application.__container__;
       }
 
       application.deferReadiness();
