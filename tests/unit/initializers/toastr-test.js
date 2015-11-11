@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import hasEmberVersion from 'ember-test-helpers/has-ember-version';
 import { initialize } from 'ember-toastr/initializers/toastr';
 import { module, test } from 'qunit';
 
@@ -8,7 +9,13 @@ module('Unit | Initializer | toastr', {
   beforeEach: function() {
     Ember.run(function() {
       application = Ember.Application.create();
-      registry = application.container && application.container.lookup ? application.container : application;
+
+      if (hasEmberVersion(1) || hasEmberVersion(2, 0)) {
+        registry = application.registry;
+      } else {
+        registry = application.container;
+      }
+
       application.deferReadiness();
     });
   }
