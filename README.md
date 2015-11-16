@@ -12,10 +12,22 @@ A wrapper for [toastr.js] by injecting it into routes, components, and controlle
 ember install ember-toastr
 ```
 
-The toastr object is injected as `toast`, so it can be used as
+The toastr object is injected as `toast` into controllers, routes, and components,
+so it can be used like so:
 
 ```js
 this.toast.info('Hello there!');
+```
+
+If you want to access it anywhere else, please inject it
+
+```js
+toast: inject.service(),
+
+test() {
+  // don't forget to use `get`, since injections are computed properties
+  this.get('toast').info('test');
+}
 ```
 
 See the toastr.js [demo] for other possible uses.
