@@ -36,8 +36,7 @@ export default {
     if (!config.injectAs) {
       config.injectAs = 'toast';
     }
-
-    console.log(application);
+    
     initialize(application, config);
   }
 };
