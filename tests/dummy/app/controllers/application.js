@@ -3,16 +3,16 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   actions: {
     info(val) {
-      this.notify.info(val);
+      this.toast.info(val, val, { progressBar: false });
     },
     success(val) {
-      this.notify.success(val);
+      this.toast.success(val);
     },
     warning(val) {
-      this.notify.warning(val);
+      this.toast.warning(val);
     },
     error(val) {
-      this.notify.error(val);
+      this.toast.error(val);
     }
   }
 });

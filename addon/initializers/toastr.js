@@ -1,8 +1,8 @@
 import Ember from 'ember';
 
 var proxyGenerator = function(name){
-  return function(msg = '', title = '') {
-    window.toastr[name](msg.toString(), title.toString());
+  return function(msg = '', title = '', options = {}) {
+    window.toastr[name](msg.toString(), title.toString(), options);
   };
 };
 
