@@ -27,11 +27,14 @@ toast: inject.service(),
 
 test() {
   // don't forget to use `get`, since injections are computed properties
-  this.get('toast').info('test');
+  var toast = this.get('toast');
+  
+  toast.info('text', 'title', options);
 }
 ```
 
-See the toastr.js [demo] for other possible uses.
+See the toastr.js [demo] for other possible uses, and the [toastr.js documentation]
+for explanation of options.
 
 ## Configuration
 
@@ -85,4 +88,5 @@ All options in `toastrOptions` are direct options for toastr.js.
 For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
 
 [toastr.js]: https://github.com/CodeSeven/toastr
+[toastr.js documentation]: https://github.com/CodeSeven/toastr#other-options
 [demo]: http://codeseven.github.io/toastr/demo.html
