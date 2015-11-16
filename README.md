@@ -1,6 +1,6 @@
 # ember-toastr
 
-A wrapper for [toastr.js] by injecting it into routes, components, and controllers.
+A service wrapper for [toastr.js] with auto injection into routes, components, and controllers.
 
 [![npm version](https://badge.fury.io/js/ember-toastr.svg)](http://badge.fury.io/js/ember-toastr)
 [![Build Status](https://travis-ci.org/knownasilya/ember-toastr.svg)](https://travis-ci.org/knownasilya/ember-toastr)
@@ -12,7 +12,7 @@ A wrapper for [toastr.js] by injecting it into routes, components, and controlle
 ember install ember-toastr
 ```
 
-The toastr object is injected as `toast` into controllers, routes, and components,
+The toastr service is injected as `toast` into controllers, routes, and components,
 so it can be used like so:
 
 ```js
