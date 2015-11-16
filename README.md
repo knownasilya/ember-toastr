@@ -18,6 +18,7 @@ so it can be used like so:
 ```js
 this.toast.info('Hello there!');
 ```
+> :warning: Version 2.0 will probably remove the automatic injection into controllers and components in favor of service injection, and your own automatic injection.
 
 If you want to access it anywhere else, please inject it
 
