@@ -22,4 +22,5 @@ export function initialize(application, options) {
   application.inject('route', injectAs, 'notify:main');
   application.inject('controller', injectAs, 'notify:main');
   application.inject('component', injectAs, 'notify:main');
+  application.inject('service', injectAs, 'notify:main');
 }
