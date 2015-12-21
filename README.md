@@ -23,7 +23,7 @@ this.toast.info('Hello there!');
 If you want to access it anywhere else, please inject it
 
 ```js
-toast: inject.service(),
+toast: Ember.inject.service(),
 
 test() {
   // don't forget to use `get`, since injections are computed properties
