@@ -1,9 +1,13 @@
-<h2 id="title">Welcome to Ember.js</h2>
+<h2 id="title">ember-toastr</h2>
+
 <button onclick={{action 'success' 'Saved!'}}>Success</button>
 <button onclick={{action 'info' 'New notification!'}}>Info</button>
 <button onclick={{action 'warning' 'Do not do this!'}}>Warning</button>
 <button onclick={{action 'error' 'Oh oh!'}}>Error</button>
+
 <hr/>
+
 <button onclick={{action toast.clear}}>Clear</button>
 <button onclick={{action toast.remove}}>Remove</button>
+
 {{outlet}}
