@@ -92,6 +92,13 @@ All options in `toastrOptions` are direct options for toastr.js.
 
 * `ember build`
 
+## Publish Demo Site
+
+```no-highlight
+ember github-pages:commit --message <message>
+git push
+```
+
 For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
 
 [toastr.js]: https://github.com/CodeSeven/toastr
