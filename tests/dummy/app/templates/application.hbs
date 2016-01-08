@@ -1,6 +1,9 @@
 <h2 id="title">Welcome to Ember.js</h2>
-<a onclick={{action 'success' 'Saved!'}}>Success</a><br>
-<a onclick={{action 'info' 'New notification!'}}>Info</a><br>
-<a onclick={{action 'warning' 'Do not do this!'}}>Warning</a><br>
-<a onclick={{action 'error' 'Oh oh!'}}>Error</a><br>
+<button onclick={{action 'success' 'Saved!'}}>Success</button>
+<button onclick={{action 'info' 'New notification!'}}>Info</button>
+<button onclick={{action 'warning' 'Do not do this!'}}>Warning</button>
+<button onclick={{action 'error' 'Oh oh!'}}>Error</button>
+<hr/>
+<button onclick={{action toast.clear}}>Clear</button>
+<button onclick={{action toast.remove}}>Remove</button>
 {{outlet}}

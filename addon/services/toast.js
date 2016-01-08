@@ -10,5 +10,13 @@ export default Ember.Service.extend({
   success: proxyGenerator('success'),
   info: proxyGenerator('info'),
   warning: proxyGenerator('warning'),
-  error: proxyGenerator('error')
+  error: proxyGenerator('error'),
+
+  clear() {
+    window.toastr.clear();
+  },
+
+  remove() {
+    window.toastr.remove();
+  }
 });

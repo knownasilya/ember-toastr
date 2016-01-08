@@ -28,9 +28,16 @@ toast: Ember.inject.service(),
 test() {
   // don't forget to use `get`, since injections are computed properties
   var toast = this.get('toast');
-  
+
   toast.info('text', 'title', options);
 }
+```
+
+You can also use `toast.clear()` and `toast.remove()` to
+remove all toasts. For example:
+
+```hbs
+<button onclick={{action toast.clear}}>Clear</button>
 ```
 
 See the toastr.js [demo] for other possible uses, and the [toastr.js documentation]
