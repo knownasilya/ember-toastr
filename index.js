@@ -6,6 +6,9 @@ module.exports = {
 
   included: function(app, parentAddon) {
     var target = (parentAddon || app);
+    if (target.app) {
+      target = target.app;
+    }
     var bowerDir = target.bowerDirectory;
 
     target.import(bowerDir + '/toastr/toastr.js');
