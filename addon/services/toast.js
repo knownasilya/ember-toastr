@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 var proxyGenerator = function (name) {
   return function (msg = '', title = '', options = {}) {
-    window.toastr[name](msg.toString(), title.toString(), options);
+    return window.toastr[name](msg.toString(), title.toString(), options);
   };
 };
 
@@ -12,11 +12,11 @@ export default Ember.Service.extend({
   warning: proxyGenerator('warning'),
   error: proxyGenerator('error'),
 
-  clear() {
-    window.toastr.clear();
+  clear(toastElement) {
+    window.toastr.clear(toastElement);
   },
 
-  remove() {
-    window.toastr.remove();
+  remove(toastElement) {
+    window.toastr.remove(toastElement);
   }
 });
