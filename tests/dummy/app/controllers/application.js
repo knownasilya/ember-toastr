@@ -17,6 +17,9 @@ export default Ember.Controller.extend({
     removeItem(item) {
       this.get('toast').remove(item);
     },
+    clearItem(item) {
+      this.get('toast').clear(item);
+    },
     removeAll() {
       this.toast.remove();
     },
