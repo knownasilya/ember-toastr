@@ -1,8 +1,17 @@
 import Ember from 'ember';
 
-var proxyGenerator = function (name) {
+const { run } = Ember;
+
+let proxyGenerator = function (name) {
   return function (msg = '', title = '', options = {}) {
-    return window.toastr[name](msg.toString(), title.toString(), options);
+    let toasts = this.get('toasts');
+    let toast = window.toastr[name](msg.toString(), title.toString(), options);
+
+    if (toast) {
+      toasts.pushObject(toast);
+    }
+
+    return toast;
   };
 };
 
@@ -12,11 +21,33 @@ export default Ember.Service.extend({
   warning: proxyGenerator('warning'),
   error: proxyGenerator('error'),
 
+  init() {
+    this._super(...arguments);
+    this.toasts = Ember.A([]);
+
+    // Auto remove toasts when hidden
+    window.toastr.options.onHidden = run.bind(this, () => {
+      let toasts = this.get('toasts');
+      let notVisible = toasts.filter(item => !item.is(':visible'));
+      toasts.removeObjects(notVisible);
+    });
+  },
+
   clear(toastElement) {
     window.toastr.clear(toastElement);
+    if (toastElement) {
+      this.get('toasts').removeObject(toastElement);
+    } else {
+      this.set('toasts', Ember.A([]));
+    }
   },
 
   remove(toastElement) {
     window.toastr.remove(toastElement);
+    if (toastElement) {
+      this.get('toasts').removeObject(toastElement);
+    } else {
+      this.set('toasts', Ember.A([]));
+    }
   }
 });

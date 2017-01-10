@@ -5,9 +5,20 @@
 <button onclick={{action 'warning' 'Do not do this!'}}>Warning</button>
 <button onclick={{action 'error' 'Oh oh!'}}>Error</button>
 
-<hr/>
+<hr>
 
-<button onclick={{action toast.clear}}>Clear</button>
-<button onclick={{action toast.remove}}>Remove</button>
+<button onclick={{action 'clearAll'}}>Clear All</button>
+<button onclick={{action 'removeAll'}}>Remove All</button>
+
+<hr>
+
+<h3>All Toasts</h3>
+<ol>
+  {{#each toast.toasts key="@index" as |item|}}
+    <li>Item <button type="button" onclick={{action 'removeItem' item}}>x</button></li>
+  {{else}}
+    <li>No toasts</li>
+  {{/each}}
+</ol>
 
 {{outlet}}

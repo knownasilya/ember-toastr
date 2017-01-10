@@ -13,6 +13,15 @@ export default Ember.Controller.extend({
     },
     error(val) {
       this.toast.error(val);
+    },
+    removeItem(item) {
+      this.get('toast').remove(item);
+    },
+    removeAll() {
+      this.toast.remove();
+    },
+    clearAll() {
+      this.toast.clear();
     }
   }
 });
