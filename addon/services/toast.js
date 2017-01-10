@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
-var proxyGenerator = function (name) {
+const { run } = Ember;
+
+let proxyGenerator = function (name) {
   return function (msg = '', title = '', options = {}) {
     let toasts = this.get('toasts');
     let toast = window.toastr[name](msg.toString(), title.toString(), options);
@@ -22,6 +24,13 @@ export default Ember.Service.extend({
   init() {
     this._super(...arguments);
     this.toasts = Ember.A([]);
+
+    // Auto remove toasts when hidden
+    window.toastr.options.onHidden = run.bind(this, () => {
+      let toasts = this.get('toasts');
+      let notVisible = toasts.filter(item => !item.is(':visible'));
+      toasts.removeObjects(notVisible);
+    });
   },
 
   clear(toastElement) {

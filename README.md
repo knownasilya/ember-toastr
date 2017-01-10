@@ -43,6 +43,39 @@ remove all toasts. For example:
 See the toastr.js [demo] for other possible uses, and the [toastr.js documentation]
 for explanation of options.
 
+## API
+
+### `toast` Service
+
+#### `success(msg = '', title = '', options = {})`
+
+A method with the above default values for displaying a success toast.
+
+#### `info(msg = '', title = '', options = {})`
+
+A method with the above default values for displaying a info toast.
+
+#### `warning(msg = '', title = '', options = {})`
+
+A method with the above default values for displaying a warning toast.
+
+#### `error(msg = '', title = '', options = {})`
+
+A method with the above default values for displaying an error toast.
+
+#### `clear()` or `clear(toast)`
+
+A method to clear all toasts, or the individual toast.
+
+#### `remove()` or `remove(toast)`
+
+A method to remove all toasts, or the individual toast.
+
+#### `toasts`
+
+A property to access all toasts that are added.
+
+
 ## Configuration
 
 These are the default options:
