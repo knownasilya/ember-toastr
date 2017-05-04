@@ -33,6 +33,7 @@
     "ember-cli-qunit": "^1.0.4",
     "ember-cli-release": "0.2.3",
     "ember-cli-uglify": "^1.0.1",
+    "ember-cli-babel": "^5.0.0",
     "ember-disable-prototype-extensions": "^1.0.0",
     "ember-disable-proxy-controllers": "^1.0.0",
     "ember-export-application-global": "^1.0.2",
@@ -45,7 +46,6 @@
     "toastr"
   ],
   "dependencies": {
-    "ember-cli-babel": "^5.0.0",
     "toastr": "^2.1.2"
   },
   "ember-addon": {
