@@ -10,8 +10,8 @@ module.exports = {
   name: 'ember-toastr',
 
   included: function(app, parentAddon) {
-    let vendor = this.treePaths.vendor;
-    let target = (parentAddon || app);
+    var vendor = this.treePaths.vendor;
+    var target = (parentAddon || app);
 
     if (target.app) {
       target = target.app;
@@ -33,7 +33,7 @@ module.exports = {
   },
 
   treeForVendor(vendorTree){
-    let trees = [];
+    var trees = [];
     if(vendorTree){
       trees.push(vendorTree);
     }
