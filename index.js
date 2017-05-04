@@ -4,6 +4,7 @@
 var Funnel = require('broccoli-funnel');
 var MergeTrees = require('broccoli-merge-trees');
 var path = require('path');
+
 var toastrPath = path.dirname(require.resolve('toastr'));
 
 module.exports = {
@@ -20,14 +21,13 @@ module.exports = {
     target.import(
         {
           development: vendor + '/toastr/toastr.js',
-          production: vendor + '/toastr/toastr.min.js'
+          production: vendor + '/toastr/build/toastr.min.js'
         }
     );
-
     target.import(
         {
-          development: vendor + '/toastr/toastr.css',
-          production: vendor + '/toastr/toastr.min.css'
+          development: vendor + '/toastr/build/toastr.css',
+          production: vendor + '/toastr/build/toastr.min.css'
         }
     );
   },
@@ -37,12 +37,14 @@ module.exports = {
     if(vendorTree){
       trees.push(vendorTree);
     }
-    trees.push(new Funnel(toastrPath, {
-      srcDir: 'build',
-      include: ['toastr.js', 'toastr.css'],
-      destDir: 'toastr',
-    }));
 
-    return new MergeTrees(trees);
+    var toastrTree = new Funnel(toastrPath, {
+      include: ['toastr.js', 'build/toastr.*'],
+      destDir: 'toastr',
+    });
+
+    trees.push(toastrTree);
+
+    return new MergeTrees(trees, { overwrite: true });
   }
 };
