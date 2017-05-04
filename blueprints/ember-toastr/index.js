@@ -1,5 +1,5 @@
 module.exports = {
-  description: 'Install toastr.js from bower',
+  description: 'Install toastr.js from npm',
 
   // prevent complaining
   normalizeEntityName: function() {
@@ -13,6 +13,6 @@ module.exports = {
   // }
 
   afterInstall: function() {
-    return this.addBowerPackageToProject('toastr');
+    return this.addPackageToProject({name: 'toastr'});
   }
 };
