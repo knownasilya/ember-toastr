@@ -38,7 +38,7 @@ module.exports = {
       trees.push(vendorTree);
     }
     trees.push(new Funnel(toastrPath, {
-      srcDir: '/build',
+      srcDir: 'build',
       include: ['toastr.js', 'toastr.css'],
       destDir: 'toastr',
     }));
