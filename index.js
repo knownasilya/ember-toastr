@@ -32,7 +32,7 @@ module.exports = {
     );
   },
 
-  treeForVendor(vendorTree){
+  treeForVendor: function(vendorTree){
     var trees = [];
     if(vendorTree){
       trees.push(vendorTree);
