@@ -18,18 +18,8 @@ module.exports = {
       target = target.app;
     }
 
-    target.import(
-        {
-          development: vendor + '/toastr/toastr.js',
-          production: vendor + '/toastr/build/toastr.min.js'
-        }
-    );
-    target.import(
-        {
-          development: vendor + '/toastr/build/toastr.css',
-          production: vendor + '/toastr/build/toastr.min.css'
-        }
-    );
+    target.import(vendor + '/toastr/toastr.js');
+    target.import(vendor + '/toastr/build/toastr.css');
   },
 
   treeForVendor: function(vendorTree){
