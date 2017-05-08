@@ -13,6 +13,6 @@ module.exports = {
   // }
 
   afterInstall: function() {
-    return this.addPackageToProject({name: 'toastr'});
+    return this.addPackageToProject('toastr');
   }
 };
