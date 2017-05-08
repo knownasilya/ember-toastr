@@ -15,7 +15,7 @@
 <h3>All Toasts</h3>
 <ol>
   {{#each toast.toasts key="@index" as |item|}}
-    <li>Item <button type="button" onclick={{action 'removeItem' item}}>x</button></li>
+    <li>Item <button type="button" onclick={{action 'clearItem' item}}>clear</button> <button type="button" onclick={{action 'removeItem' item}}>remove</button></li>
   {{else}}
     <li>No toasts</li>
   {{/each}}

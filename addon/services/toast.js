@@ -43,11 +43,12 @@ export default Ember.Service.extend({
   },
 
   remove(toastElement) {
-    window.toastr.remove(toastElement);
     if (toastElement) {
       this.get('toasts').removeObject(toastElement);
+      toastElement.remove();
     } else {
       this.set('toasts', Ember.A([]));
     }
+    window.toastr.remove(toastElement);
   }
 });
