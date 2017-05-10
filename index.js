@@ -5,8 +5,6 @@ var Funnel = require('broccoli-funnel');
 var MergeTrees = require('broccoli-merge-trees');
 var path = require('path');
 
-var toastrPath = path.dirname(require.resolve('toastr'));
-
 module.exports = {
   name: 'ember-toastr',
 
@@ -23,6 +21,8 @@ module.exports = {
   },
 
   treeForVendor: function(vendorTree){
+    var toastrPath = path.dirname(require.resolve('toastr'));
+
     var trees = [];
     if(vendorTree){
       trees.push(vendorTree);
