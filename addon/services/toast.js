@@ -50,5 +50,10 @@ export default Ember.Service.extend({
       this.set('toasts', Ember.A([]));
     }
     window.toastr.remove(toastElement);
+  },
+
+  willDestroy() {
+    this._super(...arguments);
+    this.remove();
   }
 });
