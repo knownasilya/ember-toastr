@@ -8,16 +8,12 @@ var path = require('path');
 module.exports = {
   name: 'ember-toastr',
 
-  included: function(app, parentAddon) {
-    var vendor = this.treePaths.vendor;
-    var target = (parentAddon || app);
+  included: function() {
+    this._super.included.apply(this, arguments);
+    this._ensureThisImport();
 
-    if (target.app) {
-      target = target.app;
-    }
-
-    target.import(vendor + '/toastr/toastr.js');
-    target.import(vendor + '/toastr/build/toastr.css');
+    this.import('vendor/toastr/toastr.js');
+    this.import('vendor/toastr/build/toastr.css');
   },
 
   treeForVendor: function(vendorTree){
@@ -36,5 +32,22 @@ module.exports = {
     trees.push(toastrTree);
 
     return new MergeTrees(trees, { overwrite: true });
+  },
+  
+  _ensureThisImport: function() {
+    if (!this.import) {
+      this._findHost = function findHostShim() {
+        var current = this;
+        var app;
+        do {
+          app = current.app || app;
+        } while (current.parent.parent && (current = current.parent));
+        return app;
+      };
+      this.import = function importShim(asset, options) {
+        var app = this._findHost();
+        app.import(asset, options);
+      };
+    }
   }
 };
