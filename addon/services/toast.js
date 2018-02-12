@@ -1,9 +1,9 @@
-import Ember from 'ember';
+import { run } from '@ember/runloop';
+import Service from '@ember/service';
+import { A as array } from '@ember/array';
 
-const { run } = Ember;
-
-let proxyGenerator = function (name) {
-  return function (msg = '', title = '', options = {}) {
+let proxyGenerator = function(name) {
+  return function(msg = '', title = '', options = {}) {
     let toasts = this.get('toasts');
     let toast = window.toastr[name](msg.toString(), title.toString(), options);
 
@@ -15,7 +15,7 @@ let proxyGenerator = function (name) {
   };
 };
 
-export default Ember.Service.extend({
+export default Service.extend({
   success: proxyGenerator('success'),
   info: proxyGenerator('info'),
   warning: proxyGenerator('warning'),
@@ -23,7 +23,7 @@ export default Ember.Service.extend({
 
   init() {
     this._super(...arguments);
-    this.toasts = Ember.A([]);
+    this.toasts = array([]);
 
     // Auto remove toasts when hidden
     window.toastr.options.onHidden = run.bind(this, () => {
@@ -38,7 +38,7 @@ export default Ember.Service.extend({
     if (toastElement) {
       this.get('toasts').removeObject(toastElement);
     } else {
-      this.set('toasts', Ember.A([]));
+      this.set('toasts', array([]));
     }
   },
 
@@ -47,7 +47,7 @@ export default Ember.Service.extend({
       this.get('toasts').removeObject(toastElement);
       toastElement.remove();
     } else {
-      this.set('toasts', Ember.A([]));
+      this.set('toasts', array([]));
     }
     window.toastr.remove(toastElement);
   },

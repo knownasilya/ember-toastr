@@ -1,4 +1,3 @@
-/* jshint node: true */
 'use strict';
 
 var Funnel = require('broccoli-funnel');
@@ -33,7 +32,7 @@ module.exports = {
 
     return new MergeTrees(trees, { overwrite: true });
   },
-  
+
   _ensureThisImport: function() {
     if (!this.import) {
       this._findHost = function findHostShim() {

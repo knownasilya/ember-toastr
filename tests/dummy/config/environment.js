@@ -1,10 +1,8 @@
-/* jshint node: true */
-
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'dummy',
     environment: environment,
-    baseURL: '/ember-toastr',
+    rootURL: '/ember-toastr',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
@@ -35,7 +33,7 @@ module.exports = function(environment) {
 
   if (environment === 'test') {
     // Testem prefers this...
-    ENV.baseURL = '/';
+    ENV.rootURL = '/';
     ENV.locationType = 'none';
 
     // keep test console output quieter
@@ -46,7 +44,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    // do nothing
   }
 
   return ENV;
