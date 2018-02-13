@@ -10,7 +10,8 @@
     "start": "ember server",
     "build": "ember build",
     "lint:js": "eslint ./*.js app config lib server tests",
-    "test": "ember try:testall"
+    "test": "ember try:testall",
+    "release": "standard-version"
   },
   "repository": "git@github.com:knownasilya/ember-toastr.git",
   "engines": {
@@ -42,6 +43,7 @@
     "eslint-plugin-ember": "^5.0.3",
     "eslint-plugin-node": "^6.0.0",
     "loader.js": "^4.6.0",
+    "standard-version": "^4.3.0",
     "toastr": "^2.1.4"
   },
   "keywords": [
