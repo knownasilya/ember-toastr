@@ -23,14 +23,19 @@ this.toast.info('Hello there!');
 If you want to access it anywhere else, please inject it
 
 ```js
-toast: Ember.inject.service(),
+import Route from '@ember/routing/route';
+import { inject as service } from '@ember/service';
 
-test() {
-  // don't forget to use `get`, since injections are computed properties
-  var toast = this.get('toast');
+export default Route.extend({
+  notifications: service('toast'),
 
-  toast.info('text', 'title', options);
-}
+  test() {
+    // don't forget to use `get`, since injections are computed properties
+    let notifications = this.get('notifications');
+
+    notifications.info('text', 'title', options);
+  }
+});
 ```
 
 You can also use `toast.clear()` and `toast.remove()` to
