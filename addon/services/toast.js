@@ -5,10 +5,13 @@ import { A as array } from '@ember/array';
 let proxyGenerator = function(name) {
   return function(msg = '', title = '', options = {}) {
     let toasts = this.get('toasts');
-    let toast = window.toastr[name](msg.toString(), title.toString(), options);
+    let toast;
+    if (window && window.toastr) {
+      toast = window.toastr[name](msg.toString(), title.toString(), options);
 
-    if (toast) {
-      toasts.pushObject(toast);
+      if (toast) {
+        toasts.pushObject(toast);
+      }
     }
 
     return toast;
@@ -26,19 +29,23 @@ export default Service.extend({
     this.toasts = array([]);
 
     // Auto remove toasts when hidden
-    window.toastr.options.onHidden = run.bind(this, () => {
-      let toasts = this.get('toasts');
-      let notVisible = toasts.filter(item => !item.is(':visible'));
-      toasts.removeObjects(notVisible);
-    });
+    if (window && window.toastr) {
+      window.toastr.options.onHidden = run.bind(this, () => {
+        let toasts = this.get('toasts');
+        let notVisible = toasts.filter(item => !item.is(':visible'));
+        toasts.removeObjects(notVisible);
+      });
+    }
   },
 
   clear(toastElement) {
-    window.toastr.clear(toastElement);
-    if (toastElement) {
-      this.get('toasts').removeObject(toastElement);
-    } else {
-      this.set('toasts', array([]));
+    if (window && window.toastr) {
+      window.toastr.clear(toastElement);
+      if (toastElement) {
+        this.get('toasts').removeObject(toastElement);
+      } else {
+        this.set('toasts', array([]));
+      }
     }
   },
 
@@ -49,7 +56,9 @@ export default Service.extend({
     } else {
       this.set('toasts', array([]));
     }
-    window.toastr.remove(toastElement);
+    if (window && window.toastr) {
+      window.toastr.remove(toastElement);
+    }
   },
 
   willDestroy() {
