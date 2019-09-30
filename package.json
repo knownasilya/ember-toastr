@@ -23,15 +23,13 @@
     "broccoli-asset-rev": "^2.6.0",
     "ember-cli": "^2.18.2",
     "ember-cli-app-version": "^3.1.3",
-    "ember-cli-content-security-policy": "^1.0.0",
     "ember-cli-dependency-checker": "^2.1.0",
     "ember-cli-eslint": "^4.2.3",
-    "ember-cli-github-pages": "^0.2.0",
+    "ember-cli-github-pages": "^0.2.2",
     "ember-cli-htmlbars": "^2.0.3",
     "ember-cli-htmlbars-inline-precompile": "^1.0.2",
     "ember-cli-inject-live-reload": "^1.7.0",
     "ember-cli-qunit": "^4.3.1",
-    "ember-cli-release": "^0.2.9",
     "ember-cli-shims": "^1.2.0",
     "ember-cli-uglify": "^2.0.0",
     "ember-disable-prototype-extensions": "^1.1.3",
@@ -43,7 +41,7 @@
     "eslint-plugin-ember": "^5.0.3",
     "eslint-plugin-node": "^6.0.0",
     "loader.js": "^4.6.0",
-    "standard-version": "^4.3.0",
+    "standard-version": "^7.0.0",
     "toastr": "^2.1.4"
   },
   "keywords": [
@@ -54,7 +52,7 @@
   ],
   "dependencies": {
     "broccoli-funnel": "^2.0.1",
-    "broccoli-merge-trees": "^2.0.0",
+    "broccoli-merge-trees": "^3.0.0",
     "ember-cli-babel": "^6.11.0"
   },
   "ember-addon": {
