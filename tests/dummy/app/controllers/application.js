@@ -1,6 +1,9 @@
 import Controller from '@ember/controller';
+import { inject as service } from '@ember/service';
 
 export default Controller.extend({
+  toast: service(),
+  
   actions: {
     info(val) {
       this.toast.info(val, val, { progressBar: false });

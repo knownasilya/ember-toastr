@@ -12,6 +12,7 @@ Compatibility
 * Ember.js v3.4 or above
 * Ember CLI v2.13 or above
 * Node.js v8 or above
+* Requires jQuery (see https://github.com/emberjs/ember-jquery)
 
 ## Usage
 
@@ -19,15 +20,8 @@ Compatibility
 ember install ember-toastr
 ```
 
-The toastr service is injected as `toast` into controllers, routes, and components,
-so it can be used like so:
-
-```js
-this.toast.info('Hello there!');
-```
-> :warning: Version 2.0 will probably remove the automatic injection into controllers and components in favor of service injection, and your own automatic injection.
-
-If you want to access it anywhere else, please inject it
+You can now access the notifications service as `toast`.
+You can inject it in routes, controllers or components using the following syntax:
 
 ```js
 import Route from '@ember/routing/route';
@@ -37,19 +31,18 @@ export default Route.extend({
   notifications: service('toast'),
 
   test() {
-    // don't forget to use `get`, since injections are computed properties
-    let notifications = this.get('notifications');
-
-    notifications.info('text', 'title', options);
+    this.notifications.info('text', 'title', options);
   }
 });
 ```
+
+> If using newer versions of Ember you can inject using the decorator syntax, see the Ember documentation for @ember/service#inject decorator.
 
 You can also use `toast.clear()` and `toast.remove()` to
 remove all toasts. For example:
 
 ```hbs
-<button onclick={{action toast.clear}}>Clear</button>
+<button {{on "click" this.toast.clear}}>Clear</button>
 ```
 
 See the toastr.js [demo] for other possible uses, and the [toastr.js documentation]
