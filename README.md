@@ -6,6 +6,13 @@ A service wrapper for [toastr.js] with auto injection into routes, components, a
 [![Build Status](https://travis-ci.org/knownasilya/ember-toastr.svg)](https://travis-ci.org/knownasilya/ember-toastr)
 [![Ember Observer Score](http://emberobserver.com/badges/ember-toastr.svg)](http://emberobserver.com/addons/ember-toastr)
 
+Compatibility
+------------------------------------------------------------------------------
+
+* Ember.js v3.4 or above
+* Ember CLI v2.13 or above
+* Node.js v8 or above
+
 ## Usage
 
 ```sh
@@ -110,34 +117,12 @@ ENV['ember-toastr'] = {
 
 All options in `toastrOptions` are direct options for toastr.js.
 
-## Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+Contributing
+------------------------------------------------------------------------------
 
-## Running
+See the [Contributing](CONTRIBUTING.md) guide for details.
 
-* `ember server`
-* Visit your app at http://localhost:4200.
-
-## Running Tests
-
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
-
-## Publish Demo Site
-
-```no-highlight
-ember github-pages:commit --message <message>
-git push
-```
-
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
 
 [toastr.js]: https://github.com/CodeSeven/toastr
 [toastr.js documentation]: https://github.com/CodeSeven/toastr#other-options

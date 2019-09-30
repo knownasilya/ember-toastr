@@ -5,7 +5,7 @@ var MergeTrees = require('broccoli-merge-trees');
 var path = require('path');
 
 module.exports = {
-  name: 'ember-toastr',
+  name: require('./package').name,
 
   included: function() {
     this._super.included.apply(this, arguments);
