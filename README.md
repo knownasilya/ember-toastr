@@ -87,7 +87,6 @@ These are the default options:
 
 ```js
 ENV['ember-toastr'] = {
-  injectAs: 'toast',
   toastrOptions: {
     closeButton: true,
     debug: false,

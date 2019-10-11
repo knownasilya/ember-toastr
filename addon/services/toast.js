@@ -30,6 +30,7 @@ export default Service.extend({
 
     // Auto remove toasts when hidden
     if (window && window.toastr) {
+      window.toastr.options = this.config.toastrOptions || this.defaultToastrOptions;
       window.toastr.options.onHidden = run.bind(this, () => {
         let toasts = this.get('toasts');
         let notVisible = toasts.filter(item => !item.is(':visible'));
