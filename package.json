@@ -41,7 +41,7 @@
     "eslint-plugin-node": "^10.0.0",
     "loader.js": "^4.7.0",
     "qunit-dom": "^0.9.0",
-    "standard-version": "^7.0.0",
+    "standard-version": "^8.0.1",
     "toastr": "^2.1.4"
   },
   "keywords": [
