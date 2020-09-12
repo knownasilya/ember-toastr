@@ -6,13 +6,12 @@ A service wrapper for [toastr.js] with auto injection into routes, components, a
 [![Build Status](https://travis-ci.org/knownasilya/ember-toastr.svg)](https://travis-ci.org/knownasilya/ember-toastr)
 [![Ember Observer Score](http://emberobserver.com/badges/ember-toastr.svg)](http://emberobserver.com/addons/ember-toastr)
 
-Compatibility
-------------------------------------------------------------------------------
+## Compatibility
 
-* Ember.js v3.4 or above
-* Ember CLI v2.13 or above
-* Node.js v8 or above
-* Requires jQuery (see https://github.com/emberjs/ember-jquery)
+- Ember.js v3.16 or above
+- Ember CLI v2.13 or above
+- Node.js v10 or above
+- Requires jQuery (see https://github.com/emberjs/ember-jquery)
 
 ## Usage
 
@@ -24,16 +23,23 @@ You can now access the notifications service as `toast`.
 You can inject it in routes, controllers or components using the following syntax:
 
 ```js
-import Route from '@ember/routing/route';
+import Controller from '@ember/controller';
 import { inject as service } from '@ember/service';
+import { action } from '@ember/object';
 
-export default Route.extend({
-  notifications: service('toast'),
+export default class SomeController extends Controller {
+  @service toast;
 
+  @action
   test() {
-    this.notifications.info('text', 'title', options);
+    let title = 'Test';
+    let message = 'A test happened';
+
+    this.toast.info(message, title, {
+      // options here
+    });
   }
-});
+}
 ```
 
 > If using newer versions of Ember you can inject using the decorator syntax, see the Ember documentation for @ember/service#inject decorator.
@@ -80,7 +86,6 @@ A method to remove all toasts, or the individual toast.
 
 A property to access all toasts that are added.
 
-
 ## Configuration
 
 These are the default options:
@@ -102,19 +107,16 @@ ENV['ember-toastr'] = {
     showEasing: 'swing',
     hideEasing: 'linear',
     showMethod: 'fadeIn',
-    hideMethod: 'fadeOut'
-  }
+    hideMethod: 'fadeOut',
+  },
 };
 ```
 
 All options in `toastrOptions` are direct options for toastr.js.
 
-
-Contributing
-------------------------------------------------------------------------------
+## Contributing
 
 See the [Contributing](CONTRIBUTING.md) guide for details.
-
 
 [toastr.js]: https://github.com/CodeSeven/toastr
 [toastr.js documentation]: https://github.com/CodeSeven/toastr#other-options
