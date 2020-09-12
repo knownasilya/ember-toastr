@@ -1,23 +1,50 @@
-<h2 id='title'>ember-toastr</h2>
+<h2 id='title'>
+  ember-toastr
+</h2>
 
-<button onclick={{action 'success' 'Saved!'}}>Success</button>
-<button onclick={{action 'info' 'New notification!'}}>Info</button>
-<button onclick={{action 'warning' 'Do not do this!'}}>Warning</button>
-<button onclick={{action 'error' 'Oh oh!'}}>Error</button>
+<button type='button' onclick={{action 'success' 'Saved!'}}>
+  Success
+</button>
+<button type='button' onclick={{action 'info' 'New notification!'}}>
+  Info
+</button>
+<button type='button' onclick={{action 'warning' 'Do not do this!'}}>
+  Warning
+</button>
+<button type='button' onclick={{action 'error' 'Oh oh!'}}>
+  Error
+</button>
 
-<hr>
+<hr />
 
-<button onclick={{action 'clearAll'}}>Clear All</button>
-<button onclick={{action 'removeAll'}}>Remove All</button>
+<button type='button' onclick={{action 'clearAll'}}>
+  Clear All
+</button>
+<button type='button' onclick={{action 'removeAll'}}>
+  Remove All
+</button>
 
-<hr>
+<hr />
 
-<h3>All Toasts</h3>
+<h3>
+  All Toasts
+</h3>
 <ol>
   {{#each toast.toasts key='@index' as |item|}}
-    <li>Item <button type='button' onclick={{action 'clearItem' item}}>clear</button> <button type='button' onclick={{action 'removeItem' item}}>remove</button></li>
+    <li>
+      Item
+      <button type='button' onclick={{action 'clearItem' item}}>
+        clear
+      </button>
+
+      <button type='button' onclick={{action 'removeItem' item}}>
+        remove
+      </button>
+    </li>
   {{else}}
-    <li>No toasts</li>
+    <li>
+      No toasts
+    </li>
   {{/each}}
 </ol>
 
