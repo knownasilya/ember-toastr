@@ -2,8 +2,8 @@ import { run } from '@ember/runloop';
 import Service from '@ember/service';
 import { A as array } from '@ember/array';
 
-let proxyGenerator = function(name) {
-  return function(msg = '', title = '', options = {}) {
+let proxyGenerator = function (name) {
+  return function (msg = '', title = '', options = {}) {
     let toasts = this.toasts;
     let toast;
     if (window && window.toastr) {
@@ -30,10 +30,11 @@ export default Service.extend({
 
     // Auto remove toasts when hidden
     if (window && window.toastr) {
-      window.toastr.options = this.config.toastrOptions || this.defaultToastrOptions;
+      window.toastr.options =
+        this.config.toastrOptions || this.defaultToastrOptions;
       window.toastr.options.onHidden = run.bind(this, () => {
         let toasts = this.toasts;
-        let notVisible = toasts.filter(item => !item.is(':visible'));
+        let notVisible = toasts.filter((item) => !item.is(':visible'));
         toasts.removeObjects(notVisible);
       });
     }
@@ -65,5 +66,5 @@ export default Service.extend({
   willDestroy() {
     this._super(...arguments);
     this.remove();
-  }
+  },
 });

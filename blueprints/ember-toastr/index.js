@@ -2,8 +2,7 @@ module.exports = {
   description: 'Install toastr.js from npm',
 
   // prevent complaining
-  normalizeEntityName: function() {
-  },
+  normalizeEntityName: function () {},
 
   // locals: function(options) {
   //   // Return custom template variables here.
@@ -12,7 +11,7 @@ module.exports = {
   //   };
   // }
 
-  afterInstall: function() {
+  afterInstall: function () {
     return this.addPackageToProject('toastr');
-  }
+  },
 };
