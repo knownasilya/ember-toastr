@@ -4,7 +4,7 @@ import { A as array } from '@ember/array';
 
 let proxyGenerator = function(name) {
   return function(msg = '', title = '', options = {}) {
-    let toasts = this.get('toasts');
+    let toasts = this.toasts;
     let toast;
     if (window && window.toastr) {
       toast = window.toastr[name](msg.toString(), title.toString(), options);
@@ -32,7 +32,7 @@ export default Service.extend({
     if (window && window.toastr) {
       window.toastr.options = this.config.toastrOptions || this.defaultToastrOptions;
       window.toastr.options.onHidden = run.bind(this, () => {
-        let toasts = this.get('toasts');
+        let toasts = this.toasts;
         let notVisible = toasts.filter(item => !item.is(':visible'));
         toasts.removeObjects(notVisible);
       });
@@ -43,7 +43,7 @@ export default Service.extend({
     if (window && window.toastr) {
       window.toastr.clear(toastElement);
       if (toastElement) {
-        this.get('toasts').removeObject(toastElement);
+        this.toasts.removeObject(toastElement);
       } else {
         this.set('toasts', array([]));
       }
@@ -52,7 +52,7 @@ export default Service.extend({
 
   remove(toastElement) {
     if (toastElement) {
-      this.get('toasts').removeObject(toastElement);
+      this.toasts.removeObject(toastElement);
       toastElement.remove();
     } else {
       this.set('toasts', array([]));

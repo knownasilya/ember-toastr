@@ -18,10 +18,10 @@ export default Controller.extend({
       this.toast.error(val);
     },
     removeItem(item) {
-      this.get('toast').remove(item);
+      this.toast.remove(item);
     },
     clearItem(item) {
-      this.get('toast').clear(item);
+      this.toast.clear(item);
     },
     removeAll() {
       this.toast.remove();
