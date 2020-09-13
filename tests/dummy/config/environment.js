@@ -1,8 +1,8 @@
-module.exports = function(environment) {
+module.exports = function (environment) {
   var ENV = {
     modulePrefix: 'dummy',
     environment: environment,
-    rootURL: '/ember-toastr',
+    rootURL: '/ember-toastr/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
@@ -11,8 +11,8 @@ module.exports = function(environment) {
       },
       EXTEND_PROTOTYPES: {
         // Prevent Ember Data from overriding Date.parse.
-        Date: false
-      }
+        Date: false,
+      },
     },
 
     APP: {
@@ -22,9 +22,9 @@ module.exports = function(environment) {
 
     'ember-toastr': {
       toastrOptions: {
-        preventDuplicates: false
-      }
-    }
+        preventDuplicates: false,
+      },
+    },
   };
 
   if (environment === 'development') {

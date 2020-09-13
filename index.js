@@ -2,6 +2,7 @@
 
 const Funnel = require('broccoli-funnel');
 const MergeTrees = require('broccoli-merge-trees');
+const map = require('broccoli-stew').map;
 const path = require('path');
 
 module.exports = {
@@ -23,12 +24,23 @@ module.exports = {
       trees.push(vendorTree);
     }
 
-    let toastrTree = new Funnel(toastrPath, {
-      include: ['toastr.js', 'build/toastr.*'],
+    let toastrJsTree = new Funnel(toastrPath, {
+      include: ['toastr.js'],
+      destDir: 'toastr',
+    });
+    let toastrCssTree = new Funnel(toastrPath, {
+      include: ['build/toastr.css'],
       destDir: 'toastr',
     });
 
-    trees.push(toastrTree);
+    // protect against usage in node since it depends on jquery
+    toastrJsTree = map(
+      toastrJsTree,
+      (content) => `if (typeof FastBoot === 'undefined') { ${content} }`
+    );
+
+    trees.push(toastrCssTree);
+    trees.push(toastrJsTree);
 
     return new MergeTrees(trees, { overwrite: true });
   },
