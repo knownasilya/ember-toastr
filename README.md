@@ -114,6 +114,13 @@ ENV['ember-toastr'] = {
 
 All options in `toastrOptions` are direct options for toastr.js.
 
+## Testing Toasts in Acceptance Tests
+
+Toastr messages are rendered inside a `div#toast-container`, but outside of `div#ember-testing-container`, where all of the testing action takes place.
+Therefore, you need to supply a second scope parameter of `document` to your `assert.dom(...)` calls.
+
+For example: `assert.dom('#toast-container', document).includesText('ERROR: Invalid username or password')`;
+
 ## Contributing
 
 See the [Contributing](CONTRIBUTING.md) guide for details.
