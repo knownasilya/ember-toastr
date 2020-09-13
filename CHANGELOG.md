@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/knownasilya/ember-toastr/compare/v2.0.2...v3.0.0) (2020-09-13)
+
+
+### ⚠ BREAKING CHANGES
+
+* Drop Node < 10
+* Drop Ember < 3.12 LTS (might work, but untested going forward)
+
+### Bug Fixes
+
+* fastboot support ([b7bc9de](https://github.com/knownasilya/ember-toastr/commit/b7bc9de6b5faf452f801f2db030b3540fa962e61)), closes [#31](https://github.com/knownasilya/ember-toastr/issues/31)
+* update deps ([8eb9229](https://github.com/knownasilya/ember-toastr/commit/8eb9229380c4f97259d1ffd09c0d9b2bb8ce1a82))
+* Upgrade Ember v3.13.1...v3.21.2 ([764d27f](https://github.com/knownasilya/ember-toastr/commit/764d27f22dbd779044d5b57d5fe6551272e29b92))
+
 ### [2.0.2](https://github.com/knownasilya/ember-toastr/compare/v2.0.1...v2.0.2) (2020-09-12)
 
 ### [2.0.1](https://github.com/knownasilya/ember-toastr/compare/v2.0.0...v2.0.1) (2019-10-11)
