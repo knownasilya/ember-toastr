@@ -1,4 +1,4 @@
-import { run } from '@ember/runloop';
+import { bind } from '@ember/runloop';
 import Service from '@ember/service';
 import { A as array } from '@ember/array';
 
@@ -32,7 +32,7 @@ export default Service.extend({
     if (window && window.toastr) {
       window.toastr.options =
         this.config.toastrOptions || this.defaultToastrOptions;
-      window.toastr.options.onHidden = run.bind(this, () => {
+      window.toastr.options.onHidden = bind(this, () => {
         let toasts = this.toasts;
         let notVisible = toasts.filter((item) => !item.is(':visible'));
         toasts.removeObjects(notVisible);
