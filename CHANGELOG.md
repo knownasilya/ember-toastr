@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.1](https://github.com/knownasilya/ember-toastr/compare/v3.0.0...v3.0.1) (2023-01-06)
+
+
+### Bug Fixes
+
+* deprecated-run-loop-and-computed-dot-access-deprecation by importing bind directly ([#74](https://github.com/knownasilya/ember-toastr/issues/74)) ([286d891](https://github.com/knownasilya/ember-toastr/commit/286d89186a46c1c9d7eacaaddf7e6bb2f2d914e0))
+
 ## [3.0.0](https://github.com/knownasilya/ember-toastr/compare/v2.0.2...v3.0.0) (2020-09-13)
 
 
